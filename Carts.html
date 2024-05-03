@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image:url(https://i.ibb.co/M6bmCGb/krystal-ng-O07o2-Cd-v-X0-unsplash.jpg);
+           object-fit: cover;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 80px;
+            background-image:url(https://i.ibb.co/T46wvLn/emre-karatas-Ib2e4-Qy9m-Q-unsplash.jpg);
+        }
+
+        header h1 {
+            font-family: Helvetica;
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+            letter-spacing: 2px;
+            color: white;
+            height:50px;
+            line-height: 1.5;
+            position:absolute;
+            left:44.5%;
+            bottom:25%;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 25%;
+            right: 5%;
+            z-index: 1100;
+            border-radius: 20px 20px 0px 20px;
+            border: 2px solid black;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px green;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(139, 69, 19, 1);
+            position: fixed;
+            width: 100%;
+            top: 90px;
+            z-index: 1000;
+            height: 40px;
+        }
+
+        .button {
+            width: 100%;
+            height: 100%;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            background-color: rgba(139, 69, 19, 1);
+            transition: transform 0.5s ease;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 153, 1);
+            color: black;
+            box-shadow: 0 0 40px green;
+        }
+
+        .tabcontent {
+            display: none;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: black;
+            color:white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        button.primary {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            transition: transform 0.5s ease;
+        }
+
+        button.primary:hover {
+transform:             scale(1.1);
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span><h1>Cart</h1></span>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Home.html">
+        <img class="logo" src="https://i.ibb.co/sFGFtbg/529cd5553e164b41acee5c6e00bc13ed.jpg" alt="logo">
+</a>
+
+    </header>
+    <nav>
+        <button type="button" class="button" onclick="openTab('placeOrder')">Place Order</button>
+        <button type="button" class="button" onclick="openTab('trackOrder')">Track Order</button>
+        <button type="button" class="button" onclick="openTab('orderHistory')">Order History</button>
+    </nav>
+<br><br><br><br><br>
+    <div id="placeOrder" class="tabcontent">
+        <h2>Place Order</h2>
+        <form onsubmit="return placeOrder()">
+        <p>    <label for="foodItem">Select Food Item:</label>
+            <select id="foodItem" required>
+                <option value="vegBiryani">Veg Biryani</option>
+                <option value="chickenCurry">Chicken Curry</option>
+                <option value="paneerMasala">Paneer Masala</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" placeholder="No. of Dishes" required></p><br>
+            <button type="submit" class="button primary">Place Order</button>
+        </form>
+    </div>
+
+    <div id="trackOrder" class="tabcontent">
+        <h2>Track Order</h2>
+        <form onsubmit="return trackOrder()">
+<p>            <label for="orderId">Enter Order ID:</label>
+            <input type="text" id="orderId" required></p><br>
+            <button type="submit" class="button primary">Track Order</button>
+        </form>
+    </div>
+    <div id="orderHistory" class="tabcontent">
+        <h2>Order History</h2>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Food Item</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Veg Biryani</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Chicken Curry</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Paneer Masala</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Show the selected tab content
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        function placeOrder() {
+            var foodItem = document.getElementById('foodItem').value;
+            var quantity = document.getElementById('quantity').value;
+
+            // You can customize this logic based on your requirements
+            alert('Order placed successfully!\nFood Item: ' + foodItem + '\nQuantity: ' + quantity);
+
+            // Prevent form submission
+            return false;
+        }
+
+        function trackOrder() {
+            var orderId = document.getElementById('orderId').value;
+
+            // You can customize this logic based on your requirements
+            alert('Tracking order with ID: ' + orderId);
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</body>
+
+</html>

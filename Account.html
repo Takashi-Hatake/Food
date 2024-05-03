@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; background-image:url(https://i.ibb.co/M6bmCGb/krystal-ng-O07o2-Cd-v-X0-unsplash.jpg);
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            background-image: url(https://i.ibb.co/T46wvLn/emre-karatas-Ib2e4-Qy9m-Q-unsplash.jpg);
+            position: fixed;
+            top: 0px;
+            width: 100%; /* Make the header span the entire width */
+            height: 80px;
+            z-index: 1000; /* Ensure the header is on top of other fixed elements */
+        }
+
+        header h1 {
+            font-family: Helvetica;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 15px;
+            right: 50px;
+            z-index: 1100;
+            border-radius: 20px 20px 0px 20px;
+            border: 2px solid black;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px green;
+        }
+
+        .account-container {
+            max-width: 600px;
+            margin: 130px auto; /* Adjusted margin to account for the fixed header */
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+background-color: rgba(139,69,19,1);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            color:white;
+        }
+
+        .tab button:hover {
+             color:black;
+background-color: rgba(255,255,153,1);
+        }
+
+        .tabcontent {
+            display: none;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        button {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        h2{
+             color:white;
+        }
+        p{
+             color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Account</h1>
+     <a href="file:///C:/Users/yourUsername/Desktop/project/webpage2.html">   <img class="logo" src="https://i.ibb.co/sFGFtbg/529cd5553e164b41acee5c6e00bc13ed.jpg" alt="logo">
+     </a>
+    </header>
+
+    <div class="account-container">
+        <div class="tab">
+            <button onclick="openTab('login')">Login</button>
+            <button onclick="openTab('signup')">Sign Up</button>
+            <button onclick="openTab('profile')">Profile</button>
+        </div>
+
+        <div id="login" class="tabcontent">
+            <h2>Login</h2>
+            <form onsubmit="return loginUser()">
+                <input type="text" id="loginUsername" placeholder="type Tiranga" required>
+                <input type="password" id="loginPassword" placeholder="type JaiHindi" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="signup" class="tabcontent">
+            <h2>Sign Up</h2>
+            <form onsubmit="return signupUser()">
+                <input type="text" id="signupUsername" placeholder="Username" required>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+                
+                
+            </form>
+        </div>
+
+        <div id="profile" class="tabcontent">
+            <h2>Profile</h2>
+            <p>Welcome, <span id="profileUsername"></span>!</p>
+            <p> How was your day,Sir.</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Show the selected tab content
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        function loginUser() {
+            var username = document.getElementById('loginUsername').value;
+            var password = document.getElementById('loginPassword').value;
+
+            // Check if the provided credentials match the default user
+            if (username === 'Tiranga' && password === 'JaiHind') {
+                document.getElementById('profileUsername').innerText = "Soldier";
+                openTab('profile');
+                return false; // Prevent form submission
+            } else {
+                alert('Invalid username or password');
+                return false; // Prevent form submission
+            }
+        }
+
+        function signupUser() {
+            // Implement user registration logic if needed
+             var username = document.getElementById('signupUsername').value;
+             document.getElementById('profileUsername').innerText = username;
+             openTab('profile');
+            alert('User registered successfully');
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+
+</html>

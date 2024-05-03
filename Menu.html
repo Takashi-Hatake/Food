@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image:url(https://i.ibb.co/M6bmCGb/krystal-ng-O07o2-Cd-v-X0-unsplash.jpg);
+            object-fit: cover;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-image:url(https://i.ibb.co/T46wvLn/emre-karatas-Ib2e4-Qy9m-Q-unsplash.jpg);
+            height: 80px;
+        }
+
+        header h1 {
+            font-family: Helvetica;
+            font-size: 50px;
+            position:absolute;
+            left:42%;
+            bottom:7%;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+            letter-spacing: 2px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 20%;
+            right: 5%;
+            z-index: 1100;
+            border-radius: 20px 20px 0px 20px;
+            border: 2px solid black;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px green;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 90px;
+            z-index: 1000;
+            height: 40px;
+        }
+
+        .button {
+            width: 50%;
+            height: 100%;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(139, 69, 19, 1);
+            transition: transform 0.5s ease;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 153, 1);
+            color: black;
+            box-shadow: 0 0 40px green;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            color:white;
+            background-color: rgba(0,0,0,0.7);
+            border: none;
+            border-radius: 5px;
+        }
+
+        .menu-container {
+            max-width: 80%
+            margin: 150px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color:white;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .search-bar {
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            color:white;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            color:white;
+            background-color: rgba(0,0,0,0.7);
+        }
+img{
+     color:white;
+     background-color: rgba(0,0,0,0.7);
+     width:200px;
+     height:200px;
+     transition: transform 0.5s ease;
+     border: 1px solid white;
+     border-radius: 20px;
+     box-shadow:0 0 10px black;
+
+     
+}
+.nonimg:hover{
+     transform: scale(1.2);
+     box-shadow:0 0 20px purple;
+     border: 1px solid purple;
+}
+.vegimg:hover{
+     transform: scale(1.2);
+     box-shadow:0 0 20px yellow;
+     border: 1px solid yellow;
+}
+
+        .menu-item {
+            padding: 10%;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            color:white;
+            background-color: rgba(0,0,0,0.7);
+        }
+h3{
+     padding:5%;
+}
+        .non-veg {
+            display: none;
+            color:white;
+            background-color: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span><h1>Menu</h1></span>
+      <a href="file:///C:/Users/yourUsername/Desktop/project/Home.html">
+        <img class="logo" src="https://i.ibb.co/sFGFtbg/529cd5553e164b41acee5c6e00bc13ed.jpg" alt="logo">
+        </a>
+    </header>
+    <nav>
+        <button type="button" class="button" onclick="showVeg()">Veg</button>
+        <button type="button" class="button" onclick="showNonVeg()">Non-Veg</button>
+    </nav>
+<BR><BR><BR><BR><BR><BR><BR><BR>
+    <div class="menu-container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for food items..." oninput="searchFood()">
+        </div>
+        <div class="menu-items veg">
+            <div class="menu-item">
+            <img class="vegimg" src="https://i.ibb.co/xqQzNkX/Paneer.jpg" alt="Food Item 4">
+                <h3>Shyahi Paneer</h3>
+            </div>
+         
+            
+            <div class="menu-item">
+            <img class="vegimg" src="https://i.ibb.co/S5MM85C/Chole-Bhature.jpg" alt="Food Item 5">
+                <h3>Chola Bhatura</h3>
+            </div>
+            
+             
+             <div class="menu-item">
+ <img class="vegimg" src="https://i.ibb.co/dBykLMs/Mushroom.jpg" alt="Food Item 6">
+                <h3>Mushroom</h3>
+            </div>
+            
+            <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/192mkqS/Paneer-Tikka.jpg" alt="Food Item 3">
+                <h3>Paneer-Tikka</h3>
+            </div>
+
+
+            <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/Vg4pRzS/PAvBhaji.jpg" alt="Food Item 3">
+                <h3>Paw Bhaji</h3>
+            </div>
+            
+            <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/0fcPMgX/Paneer-Manchurian.jpg">
+                <h3>Chola</h3>
+            </div>
+            
+            <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/qYnCvkh/Burger.jpg">
+                <h3>Chola</h3>
+            </div>
+            
+            <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/CvCmWNL/MixVeg.jpg">
+                <h3>Chola</h3>
+            </div>
+            
+            <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/Qr4mTwW/French-Fry.jpg">
+                <h3>Chola</h3>
+            </div>
+             
+             <div class="menu-item">
+<img class="vegimg" src="https://i.ibb.co/r6dbknN/Samosa.jpg">
+<h3></h3>
+</div>
+            
+            
+      <div class="menu-item">      
+            <img class="vegimg" src="https://i.ibb.co/mJMjN90/Idli.jpg">
+            <h3></h3>
+            </div>
+            
+            
+   
+   <div class="menu-item">
+   <img class="vegimg" src="https://i.ibb.co/gm7MBzp/Pizza.jpg">
+   <h3></h3>
+   </div>
+   
+   
+   
+   <div class="menu-item">
+   <img class="vegimg" src="https://i.ibb.co/zPxQhcB/images-22.jpg">
+   <h3></h3>
+   </div>
+   
+           
+        </div>
+
+        <div class="menu-items non-veg">
+            <div class="menu-item">
+<img class="nonimg" src="https://i.ibb.co/K9Q3RhV/images-15.jpg">
+                <h3>Chicken</h3>
+            </div>
+            <div class="menu-item">
+<img class="nonimg" src="https://i.ibb.co/VtPp4QK/images-16.jpg">
+                <h3>Chicken Biryani</h3>
+</div>
+<div class="menu-item">
+<img class="nonimg" src="https://i.ibb.co/Gtx24F3/images-17.jpg">
+                <h3>Mutton Biryani</h3>
+            </div>
+            <div class="menu-item">
+<img class="nonimg" src="https://i.ibb.co/R0cdp3x/images-18.jpg">
+                <h3>FIsh Fry</h3>
+            </div>
+            <div class="menu-item">
+<img class="nonimg" src="https://i.ibb.co/9YwhSHK/images-13.jpg">
+                <h3>Mutton</h3>
+            </div>
+            <div class="menu-item">
+<img class="nonimg" src="https://i.ibb.co/C5tCRr0/images-21.jpg">
+                <h3>Chicken Nugget</h3>
+            </div>
+          
+        </div>
+    </div>
+    <script>
+        function showVeg() {
+            document.querySelector('.veg').style.display = 'grid';
+            document.querySelector('.non-veg').style.display = 'none';
+        }
+
+        function showNonVeg() {
+            document.querySelector('.veg').style.display = 'none';
+            document.querySelector('.non-veg').style.display = 'grid';
+        }
+
+        function searchFood() {
+            var searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+            var foodItems = document.querySelectorAll('.menu-item');
+
+            foodItems.forEach(function (item) {
+                var itemName = item.innerText.toLowerCase();
+
+                if (itemName.includes(searchInput)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

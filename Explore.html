@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image:url(https://i.ibb.co/M6bmCGb/krystal-ng-O07o2-Cd-v-X0-unsplash.jpg);
+           object-fit: cover;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            background-image:url(https://i.ibb.co/T46wvLn/emre-karatas-Ib2e4-Qy9m-Q-unsplash.jpg);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        header h1 {
+            font-family: Helvetica;
+            font-size: 50px;
+            left:41%;
+            bottom:5%;
+            position:absolute;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+            letter-spacing: 2px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 25%;
+            right: 5%;
+            z-index: 1100;
+            border-radius: 20px 20px 0px 20px;
+            border: 2px solid black;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px green;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 85px;
+            z-index: 1000;
+            height: 40px;
+            background-color: rgba(139, 69, 19, 1);
+        }
+
+        .button {
+            width: 100%;
+            height: auto;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(139, 69, 19, 1);
+            transition: transform 0.5s ease;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 153, 1);
+            color: black;
+            box-shadow: 0 0 40px green;
+        }
+
+        .tabcontent {
+            display: none;
+            max-width: 80%;
+            margin: 50px auto;
+            background-color: rgba(0,0,0,0.7);
+            color:white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        
+        
+        
+            .item1,
+            .item2,
+            .item3 {
+            margin-bottom: 30px;
+            transition: transform 1s ease;
+        }
+        .item1 img{
+             width: 100%;
+             height: auto;
+             box-shadow: 0 0 20px pink;
+             border-radius:20px;
+             transition: box-shadow 1s ease;
+        }
+        .item1:hover,.item2:hover,.item3:hover{
+             transform: scale(1.2);
+             }
+        .item1:hover img{
+                  box-shadow: 0 0 30px red;
+             }
+        }
+        
+        
+        
+        
+
+
+        .item2 img{
+border-radius:20px;
+             box-shadow: 0 0 20px white;
+             transition: box-shaodw 1s ease;
+        }
+
+        .item2:hover img{
+                  box-shadow: 0 0 30px yellow;
+             }
+        }
+        
+        
+        .item3 img{
+             width:100%;
+             height:auto;
+             border-radius:20px;
+             box-shadow: 0 0 20px black;
+             transition: box-shadow 1s ease;
+        }
+        .item3:hover img{
+                  box-shadow: 0 0 30px purple;
+             }
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+
+        .item h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span><h1>Explore</h1></span>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Home.html">
+        <img class="logo" src="https://i.ibb.co/sFGFtbg/529cd5553e164b41acee5c6e00bc13ed.jpg" alt="logo">
+        </a>
+    </header>
+    <nav>
+        <button type="button" class="button" onclick="openTab('special')">Special</button>
+        <button type="button" class="button" onclick="openTab('combo')">Combo</button>
+        <button type="button" class="button" onclick="openTab('beverages')">Beverages</button>
+    </nav>
+
+
+
+    <div id="special" class="tabcontent">
+        <h2>Special Items</h2>
+        <div class="item1">
+            <img class="special" src="https://i.ibb.co/MNCXxvw/Chena.jpg" alt="Special Item 1">
+            <h3>Chena</h3>
+            <p></p>
+        </div>
+        <BR><BR>
+        <div class="item1">
+            <img class="special" src="https://i.ibb.co/W03TBVV/Gulab-Jamun.jpg" alt="Special Item 2">           <h3>Gulab Jamun</h3>
+            <p>Most demandng dessert in marriages</p>
+        </div>
+        <BR><BR>
+    <div class="item1">
+            <img class="special" src="https://i.ibb.co/ftbfx69/Cake.jpg" alt="Special Item 2">
+            <h3>Chocolate Nuts Cake</h3>
+            <p>Want to celebrate your wedding anniversary/birthday,This dessert is all for it</p>
+        </div>
+        <BR><BR>
+    <div class="item1">
+            <img class="special" src="https://i.ibb.co/DWK26hP/Chocolate-Icecream.jpg" alt="Special Item 2">
+            <h3>Chocolate Delite Icecream</h3>
+            <p>In a sunny day when sweat is problem demand for this monster rises</p>
+        </div>
+        <BR><BR>
+    <div class="item1">
+            <img class="special" src="https://i.ibb.co/PjhNX6H/Jalebi.jpg" alt="Special Item 2">
+            <h3>Dahi Jalebi</h3>
+            <p>Jalebi/Dahi Jalebi is popular in indian morning desserts</p>
+        </div>
+</div>
+    
+    
+    
+    
+    <div id="combo" class="tabcontent">
+        <h2>Combos</h2>
+        <div class="item2">
+            <img class="combo" src="https://i.ibb.co/zmJL4jc/combo2.jpg" alt="Combo 1">
+            <h3>Desi Thali</h3>
+            <p>Combinations from different regions ready to amaze you.</p>
+        </div>
+        <div class="item2">
+            <img class="combo" src="https://i.ibb.co/BVG9fK1/combo1.jpg" alt="Combo 2">
+            <h3>FastFood Combo</h3>
+            <p>Choice of Youth</p>
+        </div>
+    </div>
+
+    <div id="beverages" class="tabcontent">
+        <h2>Beverages</h2>
+        <div class="item3">
+            <img class="beverage" src="https://i.ibb.co/NFdR4jd/images-23.jpg" alt="Beverage 1">
+            <h3>Beverage 1</h3>
+            <p>Description of Beverage 1.</p>
+        </div>
+        <div class="item3">
+            <img class="beverage" src="https://i.ibb.co/3pcFQtf/Coldrink.jpg" alt="Beverage 2">
+            <h3>Beverage 2</h3>
+            <p>Description of Beverage 2.</p>
+        </div>
+        
+        <div class="item3">
+            <img class="beverage" src="https://i.ibb.co/9NdHJBR/Beer.jpg" alt="Beverage 2">
+            <h3>Beverage 2</h3>
+            <p>Description of Beverage 2.</p>
+        </div>
+        
+        <div class="item3">
+            <img class="beverage" src="https://i.ibb.co/tzdvhqy/Coffee.jpg" alt="Beverage 2">
+            <h3>Beverage 2</h3>
+            <p>Description of Beverage 2.</p>
+        </div>
+        
+        <div class="item3">
+            <img class="beverage" src="https://i.ibb.co/cD8zG8h/Lassi.jpg" alt="Beverage 2">
+            <h3>Beverage 2</h3>
+            <p>Description of Beverage 2.</p>
+        </div>
+        
+        <div class="item3">
+            <img class="beverage" src="https://i.ibb.co/8cMKg3T/Tea.jpg" alt="Beverage 2">
+            <h3>Beverage 2</h3>
+            <p>Description of Beverage 2.</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Show the selected tab content
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;        background-image:url(https://i.ibb.co/M6bmCGb/krystal-ng-O07o2-Cd-v-X0-unsplash.jpg);
+           object-fit: cover;
+        }
+   
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+background-image:url(https://i.ibb.co/T46wvLn/emre-karatas-Ib2e4-Qy9m-Q-unsplash.jpg);
+    position: fixed;
+    top:0px;
+    width: 100%; /* Make the header span the entire width */
+    height:80px;
+    z-index: 1000; /* Ensure the header is on top of other fixed elements */
+}
+header h1 {
+    font-family: Helvetica;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    color: white;
+    line-height: 1.5;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 25%; /* Adjust the top value as needed */
+    right: 5%; /* Adjust the right value as needed */
+    z-index: 1100; /* Make sure it has a higher z-index than the header */
+    border-radius: 20px 20px 0px 20px;
+    border:2px solid black;
+    transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+}
+.logo:hover{
+ transform: scale(1.2);
+     box-shadow:0 0 10px green;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: ;
+    padding: 0.5em;
+    position: fixed;
+    width: 100%; /* Make the navigation bar span the entire width */
+    top: 100px; /* Adjust this value based on the height of your header */
+    z-index: 1000;
+    height:45px;
+}
+
+main {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 35px;
+    margin-top: 100px; /* Adjust this value based on the height of your header and navigation bar */
+}
+
+/* Add this media query for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    }
+            .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5em;
+         
+        }
+        
+        
+
+        .button {
+            width: 220px; 
+            height:100%;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: white;
+            border: none;
+            background-color: rgba(139,69,19,1);
+            transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+        }
+      
+
+        .button:hover {
+            background-color: rgba(255,255,153,1);
+            color:black;
+            box-shadow: 0 0 40px green;
+        }
+
+        section {
+            padding: 1em;
+            background-color:rgba(0,0,0,0.4);
+            color:white;
+        }
+
+        aside {
+            background-color: #ddd;
+            padding: 1em;
+            margin: 1em;
+            top:0;
+            right:0;
+            position:relative;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            button {
+                display: none;
+            }
+        }
+        
+        
+            /* Style the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* Style the dropdown button */
+        .dropdown-button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hide the dropdown content by default */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        /* Style the dropdown items */
+        .dropdown-item {
+            background-color: black;
+            color: white;
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            display: block;
+         
+        }
+        /* Hover coding */
+        .dropdown-item:hover{
+             background-color:rgba(255,255,153,1);
+             color:black;
+          box-shadow: 0 0 20px grey;
+        }
+    
+
+        /* Show the dropdown content when hovering over the button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            box-shadow: 0 0 40px grey;
+        }
+        /* Gallery images */
+        
+         .carousel-container {
+            width: 80%;
+            margin-left:10%;
+            height:auto;
+            margin-top:30px;
+            border-radius:20px;
+            overflow: hidden;
+            box-shadow:30px 30px 90px black;
+        }
+        .carousel {
+            display: flex;
+            gap:10px;
+            animation: moveCarousel 20s linear infinite;
+        }
+
+        .carousel img {
+            width: 100%;
+            border:2px solid black;
+            height: auto;
+            object-fit: cover;
+            border-radius:20px;
+            transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+            }
+            .carousel img:hover{
+                 transform:scale(1.2);
+            box-shadow:0 0 20px yellow;
+        }
+
+        @keyframes moveCarousel {
+            0%{
+                 transform: translateX(0%);
+            }
+        
+            100%{
+                 transform: translateX(-280%);
+            }
+        }
+      .all {
+            width: 100%;
+            height: auto;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .hunger {
+            width: 40%;
+            height: 374px;
+            margin-top: 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:0 0 40px black;
+        }
+
+        .pics {
+            width: 50%;
+            height: auto;
+            display: flex;
+            gap: 10px;
+            animation: movePics 20s linear infinite;
+        }
+        
+        .pics img {
+            width: 100%;
+            height: auto;
+            border: 2px solid black;
+            object-fit: cover;
+            transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+        }
+        .pics img:hover{
+             transform: scale(1.2);
+            
+        }
+
+        .donate {
+             top:25px;
+            flex: 0 0 50%;
+            font-size:25px;
+            /* Adjust the width as needed */
+            position: relative;
+            margin-left: 20px;
+            /* Add margin between images */
+        }
+        .donatebutton{
+            background-color:rgba(255,215,0,1); 
+            width:200px;
+            height:50px;
+            margin-top:100px;
+            margin-left:150px;
+            color:black;
+            border-radius: 50px;
+            box-shadow:0 0 40px black;
+            transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+        }
+        .donatebutton:hover{
+             color:black;
+             background-color:rgba(255,215,0,1);
+             box-shadow: 0 0 40px #7DF9FF;
+        border-size:5px solid green;
+        transform: scale(1.2);
+        }
+
+        @keyframes movePics {
+            0% {
+                transform: translateX(0%);
+            }
+
+            33% {
+                transform: translateX(-100%);
+            }
+
+            66% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(-300%);
+            }
+        }      
+        
+        
+        
+        
+        
+        
+        
+        
+        /* Combo Deal coding here */
+ .combomax {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            border: 2px solid yellow;
+            border-radius: 20px;
+            box-shadow: 0 0 40px black;
+        }
+
+        .combo1,
+        .combo2,
+        .combo3 {
+             border-radius:20px;
+             box-shadow: 0 0 40px black;
+             border: 2px solid black;
+            height: 300px;
+            color: white;
+            padding: 40px;
+            font-size: 70px;
+            background-size: cover;
+            text-align: center;
+            width: 30%; /* Adjust width based on your design */
+            box-sizing: border-box;
+            opacity:80%;
+           transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+        }
+        .combo1:hover,
+        .combo2:hover,
+        .combo3:hover{
+             transform: scale(1.2);
+             opacity:100%;
+             font-family:bold;
+             border-color:green;
+             box-shadow: 0 0 40px purple;
+        }
+
+        .combo1 {
+            background-image: url(https://i.ibb.co/y65vVKc/Dosa-Sambhar.jpg);
+        }
+
+        .combo2 {
+            background-image: url(https://i.ibb.co/BVG9fK1/combo1.jpg);
+        }
+
+        .combo3 {
+            background-image: url(https://i.ibb.co/3Mt4QqC/combo4.jpg);
+        }
+        h1{
+             font-size:60px;
+             margin-top:0px;
+        }
+h2{
+     font-size:40px;
+     margin-left:20px;
+}
+        .Most{
+        display: flex;
+    justify-content: space-between;
+        }
+        .mostchild{
+             border: 2px solid black;
+             box-shadow: 0 0 40px black;
+             width:100%;
+             height:225px;
+             border-radius:20px;
+        transition: transform 0.5s ease; /* Add a 1-second delay to the transform effect */
+        }
+        .wrapper{
+            flex: 0 0 30%; /* Adjust the width as needed */
+    position: relative;
+    margin-right: 10px; /* Add margin between images */
+ 
+        }
+        .mostchild:hover{
+             box-shadow: 0 0 40px yellow;
+            transform: scale(1.2);
+            border-radius:20px;
+        
+             
+        }
+        .mostdes{
+             font-size:24px;
+             align:center;
+        }
+        
+        hr{
+             height:8px;
+             background-color:rgba(255,215,0,1);
+             border-radius: 20px;
+        }
+        .hr{
+             height:5px;
+             background-color:rgba(255,215,0,1);
+             border-radius: 20px;
+        }
+        a{
+             color:black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+<span><h1>Hungry India</h1></span>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Home.html">
+<img class="logo" src="https://i.ibb.co/sFGFtbg/529cd5553e164b41acee5c6e00bc13ed.jpg" alt="logo">
+</a>
+    </header>
+    <nav>
+    <div class="dropdown">
+        <button type="button" class="button" onclick="myMenu()">Menu</button>
+        <div class="dropdown-content">
+              <a href="file:///C:/Users/yourUsername/Desktop/project/Menu.html">  
+              <div class="dropdown-item">Veg</div></a>
+              <a href="file:///C:/Users/yourUsername/Desktop/project/Menu.html">
+                <div class="dropdown-item">Non-Veg</div></a>
+</div> </div>
+<div class="dropdown">
+        <button type="button" class="button" onclick="myExplore()">Explore</button>
+        <div class="dropdown-content">
+        <a href="file:///C:/Users/yourUsername/Desktop/project/Explore.html">
+                <div class="dropdown-item">Special</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Explore.html">
+                <div class="dropdown-item">Combos</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Home.html">                
+                <div class="dropdown-item">Beverages</div></a>
+</div></div>
+<div class="dropdown">
+        <button type="button" class="button" onclick="myMyOrders()">My Orders</button>
+        <div class="dropdown-content">
+        <a href="file:///C:/Users/yourUsername/Desktop/project/Carts.html">
+        <div class="dropdown-item">Place Order</div></a>
+        <a href="file:///C:/Users/yourUsername/Desktop/project/Carts.html">
+                <div class="dropdown-item">Track Orders</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Carts.html">                
+                <div class="dropdown-item">Order History</div></a>
+</div></div>
+<div class="dropdown">
+        <button type="button" class="button" onclick="myAccount()">Account</button>
+        <div class="dropdown-content">
+        <a href="file:///C:/Users/yourUsername/Desktop/project/Account.html">
+                <div class="dropdown-item">Login</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Account.html">                
+                <div class="dropdown-item">Sign</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Account.html">                
+                <div class="dropdown-item">Profile</div></a>
+</div></div>
+<div class="dropdown">
+        <button type="button" class="button" onclick="myReviews()">Reviews</button>
+        <div class="dropdown-content">
+        <a href="file:///C:/Users/yourUsername/Desktop/project/Reviews.html">
+                <div class="dropdown-item">Write a Review</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Reviews.html">                
+                <div class="dropdown-item">See Reviews</div></a>
+</div></div>
+<div class="dropdown">
+        <button type="button" class="button" onclick="myHelp()">Help & Support</button>
+        <div class="dropdown-content">
+<a href="file:///C:/Users/yourUsername/Desktop/project/Help & Support.html">        
+                <div class="dropdown-item">FAQs</div></a>
+<a href="file:///C:/Users/yourUsername/Desktop/project/Help & Support.html">                
+                <div class="dropdown-item">Contact Us</div></a>
+</div></div>
+    </nav>
+    
+    <main>
+    <section>
+        <h2>Popular Cuisines</h2><br>
+<div class="carousel-container">
+<div class="carousel">
+<img class="car" src="https://i.ibb.co/x3xbFh8/Paneer-Shyahi.jpg" alt="error">
+<img class="car" src="https://i.ibb.co/Vg4pRzS/PAvBhaji.jpg" alt="error">
+<img class="car" src="https://i.ibb.co/2qf9ZvS/Idli.jpg" alt="error">
+<img class="car" src="https://i.ibb.co/myx5CsV/images-20.jpg" alt="error">
+<img class="car" src="https://i.ibb.co/y65vVKc/Dosa-Sambhar.jpg" alt="error">
+<img class="car" src="https://i.ibb.co/x3xbFh8/Paneer-Shyahi.jpg" alt="error">
+</div><hr>
+</div>
+
+<br><br>
+<h2>Combo Deals</h2><br>
+<div class="combomax">
+<span class="combo1">30% OFF</span></>
+<span class="combo2">60% OFF</span></>
+<span class="combo3">50% OFF</span></>
+</div><br>
+<br><br><br>
+
+
+<h2>Most Loved Resturants</h2><br>
+<div class="Most">
+<div class="wrapper">
+<img class="mostchild" src="https://i.ibb.co/bNbCcLF/resturant1.jpg" alt="error"><hr class="hr"><center><u><p class="mostdes">Ali Baba</p></u></center>
+</div><div class="wrapper">
+<img class="mostchild" src="https://i.ibb.co/pXZ4581/resturant4.jpg" alt="error"><hr class="hr"><center><u><p class="mostdes">Rango di CHango</p></u></center>
+</div><div class="wrapper">
+<img class="mostchild" src="https://i.ibb.co/7tr5XGf/resturant2.jpg" alt="error"><hr class="hr"><center><u><p class="mostdes">Ramen guy</p></u></center>
+</div>
+</div><br><br><br>
+
+
+
+
+    <h2>Feed Childrens</h2><br>
+    <div class="all">
+        <div class="hunger">
+            <div class="pics">
+                <img class="child" src="https://i.ibb.co/T1Ln6M4/childlady.jpg" alt="error">
+                <img class="child" src="https://i.ibb.co/1TRGmgs/child3.jpg" alt="error">
+                <img class="child" src="https://i.ibb.co/f1jLPWQ/child4.jpg" alt="error">
+                <img class="child" src="https://i.ibb.co/2NrJXXW/child1.jpg" alt="error">
+                <img class="child" src="https://i.ibb.co/1ZJhJ7G/child2.jpg" alt="error">
+            </div><hr class="hr">
+        </div>
+        <div class="donate">Our 10% of total sales directly support childrens in need through food and education.
+            This is our small step to fulfill our beloved children's basic needs so their childhood won't be distorted.
+            Now you can become the reason behind their smiles. You are only one step away from those innocent eyes.
+<br><button type="button" class="donatebutton" alt="Hello" onclick="mydonate()">Donate</button>        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<br><br><br>
+    </section>
+    <aside>
+        <h2>News</h2>
+        <p>Stay updated with the latest food trends and events.</p>
+    </aside>
+    </main>
+    <footer>
+        &copy; 2023 Food Delivery
+    </footer>
+
+    <script>
+    
+        function toggleMenu() {
+            var buttons = document.querySelectorAll('button');
+            buttons.forEach(function (button) {
+                button.style.display = (button.style.display === 'none' || button.style.display === '') ? 'block' : 'none';
+            });
+        }
+        
+        function mydonate(){
+             window.location.href="https://balrakshabharat.org/donate";
+             
+        }
+        
+    </script>
+</body>

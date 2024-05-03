@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image:url(https://i.ibb.co/M6bmCGb/krystal-ng-O07o2-Cd-v-X0-unsplash.jpg);
+           object-fit: cover;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+           background-image:url(https://i.ibb.co/T46wvLn/emre-karatas-Ib2e4-Qy9m-Q-unsplash.jpg);
+            height: 80px;
+        }
+
+        header h1 {
+            font-family: Helvetica;
+            font-size: 50px;
+position:absolute;
+bottom:7%;
+left:42%;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+            letter-spacing: 2px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 25%;
+            right: 5%;
+            z-index: 1100;
+            border-radius: 20px 20px 0px 20px;
+            border: 2px solid black;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px green;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 90px;
+            z-index: 1000;
+            height: 40px;
+            background-color: rgba(139, 69, 19, 1);
+        }
+
+        .button {
+            width: 50%;
+            height: 100%;
+            padding: 0.5em 0.5em;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(139, 69, 19, 1);
+            transition: transform 0.5s ease;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 153, 1);
+            color: black;
+            box-shadow: 0 0 40px green;
+        }
+
+        .tabcontent {
+            display: none;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color:rgba(0,0,0,0.7);
+            color:white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form {
+            margin-bottom: 20px;
+            color:white;
+            background-color: rgba(0 , 0,0,0.7);
+        }
+#userName{
+     background-color:black;
+     color:white;
+     
+}
+        .review-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+               color:white;
+               background-color:black;
+            
+        }
+
+        .review-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .review-button:hover {
+            background-color: #45a049;
+        }
+
+        .reviews {
+            margin-top: 20px;
+        }
+
+        .review {
+            margin-bottom: 15px;
+        }
+
+        .review p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span><h1>Reviews</h1></span>
+    <a href="file:///C:/Users/yourUsername/Desktop/project/Home.html">
+        <img class="logo" src="https://i.ibb.co/sFGFtbg/529cd5553e164b41acee5c6e00bc13ed.jpg" alt="logo">
+        </a>
+    </header>
+    <nav>
+        <button type="button" class="button" onclick="openTab('writeReview')">Write a Review</button>
+        <button type="button" class="button" onclick="openTab('seeReviews')">See Reviews</button>
+    </nav>
+<BR><BR><BR><BR>
+    <div id="writeReview" class="tabcontent">
+        <h2>Write a Review</h2>
+        <div class="review-form">
+        <input type="text" id="userName" placeholder="Write your name..."required>
+        <BR><BR>
+            <textarea id="userReview" placeholder="Write your review here..." required></textarea>
+            <button class="review-button" onclick="submitReview()">Submit Review</button>
+        </div>
+    </div>
+
+    <div id="seeReviews" class="tabcontent">
+        <h2>See Reviews</h2>
+        <div class="reviews">
+            <div class="review">
+                <p>Modi: Mitro, "Sabka Saath Hungry India hai khaas "</p>
+            </div>
+            <div class="review">
+                <p>Ram Dev Baba: "Hungry India hai Ram baand"</p>
+            </div>
+              <div class="review">
+                <p>Torrorist: "Hungry India Changed my mind, I surrender"</p>
+            </div>
+              <div class="review">
+                <p>Rahul: "Maza aaya"</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Show the selected tab content
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        function submitReview() {
+            var userReview = document.getElementById('userReview').value;
+var userName = document.getElementById('userName').value;
+            // Display the submitted review
+            var reviewsContainer = document.querySelector('.reviews');
+            var newReview = document.createElement('div');
+            newReview.classList.add('review');
+            newReview.innerHTML = '<p>' + userName +': ' + userReview + '</p>';
+            reviewsContainer.appendChild(newReview);
+            // Clear the textarea
+            document.getElementById('userReview').value = '';
+            document.getElementById('userName').value = '';
+            alert("Thankyou, For your Review");
+        }
+    </script>
+</body>
+
+</html>
